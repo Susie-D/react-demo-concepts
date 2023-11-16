@@ -54,21 +54,22 @@ let handleButtonClick = (selectedButton) => {
       <main>
       <div style={{display: "flex"}}>
       {CORE_CONCEPTS.map((c) => 
-        <section id="core-concepts">
-          <ul key={c.title}>
+        <section key={c.title} id="core-concepts">
+          <ul>
             <CoreConcepts {...c}/>
             </ul>
         </section>)}
         </div>
         <section id="examples">
           <h2>Examples</h2>
+          <hr/>
           <menu>
            <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleButtonClick('components')} children="Components"/>
            <TabButton isSelected={selectedTopic === 'jsx'}  onSelect={() => handleButtonClick('jsx')} children="JSX"/>
            <TabButton isSelected={selectedTopic === 'props'}  onSelect={() => handleButtonClick('props')}  children="Props"/>
            <TabButton isSelected={selectedTopic === 'state'}  onSelect={() => handleButtonClick('state')} children="State"/>
           </menu>
-          {!selectedTopic ? <div>{tabContent}</div> :     
+          {!selectedTopic ? <div className="tab">{tabContent}</div> :     
          <div className="tab">
           <h3>{EXAMPLES[selectedTopic].title}</h3>
           <p>{EXAMPLES[selectedTopic].description}</p>
