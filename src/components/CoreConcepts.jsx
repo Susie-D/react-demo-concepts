@@ -1,5 +1,4 @@
 import CoreConceptItem from './CoreConceptItem';
-import Examples from './Examples';
 import { CORE_CONCEPTS } from '../data';
 
 export default function CoreConcepts() {
@@ -14,7 +13,6 @@ export default function CoreConcepts() {
           </section>
         ))}
       </div>
-      <Examples />
     </>
   );
 }

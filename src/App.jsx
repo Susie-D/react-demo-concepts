@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import CoreConcepts from './components/CoreConcepts';
+import Examples from './components/Examples';
 import './index.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main>
         <CoreConcepts />
+        <Examples />
       </main>
     </div>
   );
