@@ -7,6 +7,19 @@ import { EXAMPLES } from '../data';
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
   let tabContent = <p>Please select a topic.</p>;
+
+  if (selectedTopic) {
+    tabContent = (
+      <div className='tab'>
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
+
   let handleButtonClick = (selectedButton) => {
     setSelectedTopic(selectedButton);
   };
@@ -40,17 +53,7 @@ export default function Examples() {
             </>
           }
         />
-        {!selectedTopic ? (
-          <div className='tab'>{tabContent}</div>
-        ) : (
-          <div className='tab'>
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
-        )}
+        {tabContent}
       </Section>
     </>
   );
